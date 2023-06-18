@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Users</title>
+  <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+  <h1>Online Users: <span id="onlineUsers"></span></h1>
+
+  <script>
+    const socket = io();
+
+    socket.on('onlineUsers', (onlineUsers) => {
+      document.getElementById('onlineUsers').innerText = onlineUsers;
+    });
+  </script>
+</body>
+</html>
